@@ -5,6 +5,7 @@ describe DockingStation do
     let(:dockingstation) { DockingStation.new }
     let(:bike) { double(:bike, working?: true) }
   
+  
     
   describe '#release_bike' do
 
@@ -22,7 +23,8 @@ describe DockingStation do
 
   describe '#dock' do
     it 'can dock a bike' do
-      expect(dockingstation.dock(bike)).to eq bike
+      dockingstation.dock(bike)
+      expect(dockingstation.bikes.length).to eq 1
     end
   end  
 
