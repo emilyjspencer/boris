@@ -20,4 +20,10 @@ describe DockingStation do
     end
   end 
 
+  describe '#dock' do
+    it 'can dock a bike' do
+      expect(dockingstation.dock(bike)).to eq bike
+    end
+  end  
+
 end 
