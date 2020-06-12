@@ -13,6 +13,7 @@ class DockingStation
 
 
   def release_bike
+    fail "No bikes available" unless @bikes.length >= 1
     @bikes.pop
   end 
 

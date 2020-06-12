@@ -17,6 +17,10 @@ describe DockingStation do
       dockingstation.release_bike
       expect(bike.working?).to eq true 
     end
+
+    it 'throws an error if the user tries to release a bike when there is no bike to release' do
+      expect { dockingstation.release_bike }.to raise_error "No bikes available"
+    end 
   end 
 
   describe '#dock' do
