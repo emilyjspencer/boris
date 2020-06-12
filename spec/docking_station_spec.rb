@@ -30,7 +30,7 @@ describe DockingStation do
     end
 
     it 'throws an error if a user tries to dock a bike when the docking station is at full capacity' do
-      5.times { dockingstation.dock(bike) } 
+      DockingStation::DEFAULT_CAPACITY.times { dockingstation.dock(bike) } 
       expect { dockingstation.dock(bike) }.to raise_error "Unable to dock bike. Station is at full capacity"
     end 
   end  
