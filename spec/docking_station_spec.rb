@@ -28,6 +28,11 @@ describe DockingStation do
       dockingstation.dock(bike)
       expect(dockingstation.bikes.length).to eq 1
     end
+
+    it 'throws an error if a user tries to dock a bike when the docking station is at full capacity' do
+      5.times { dockingstation.dock(bike) } 
+      expect { dockingstation.dock(bike) }.to raise_error "Unable to dock bike. Station is at full capacity"
+    end 
   end  
 
 end 
