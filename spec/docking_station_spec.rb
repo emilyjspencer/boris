@@ -21,6 +21,12 @@ describe DockingStation do
     it 'throws an error if the user tries to release a bike when there is no bike to release' do
       expect { dockingstation.release_bike }.to raise_error "No bikes available"
     end 
+
+    it 'throws an error if the user tries to release a bike that is broken' do
+      bike = double('bike', { working?: false })
+      dockingstation.dock(bike)
+      expect { dockingstation.release_bike }.to raise_error 'Unable to release bike'
+    end 
   end 
 
   describe '#dock' do
