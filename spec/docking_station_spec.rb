@@ -3,7 +3,7 @@ require 'dockingstation'
 describe DockingStation do
     
     let(:dockingstation) { DockingStation.new }
-    let(:bike) { double(:bike) }
+    let(:bike) { double(:bike, working?: true) }
   
     
   describe '#release_bike' do
@@ -15,7 +15,6 @@ describe DockingStation do
     end 
 
     it 'can release a bike that works' do
-      bike = double('bike', {working?: true})
       dockingstation.release_bike(bike)
       expect(bike.working?).to eq(true)
     end
