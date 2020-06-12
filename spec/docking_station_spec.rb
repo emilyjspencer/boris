@@ -11,13 +11,11 @@ describe DockingStation do
 
     it { is_expected.to respond_to :release_bike }
 
-    it 'can release a bike' do
-      expect(dockingstation.release_bike(bike)).to eq bike 
-    end 
 
     it 'can release a bike that works' do
-      dockingstation.release_bike(bike)
-      expect(bike.working?).to eq(true)
+      dockingstation.dock(bike)
+      dockingstation.release_bike
+      expect(bike.working?).to eq true 
     end
   end 
 
