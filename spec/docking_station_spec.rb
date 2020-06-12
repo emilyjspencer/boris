@@ -23,7 +23,7 @@ describe DockingStation do
     end 
 
     it 'throws an error if the user tries to release a bike that is broken' do
-      bike = double('bike', { working?: false })
+      allow(bike).to receive(:working?).and_return(false)
       dockingstation.dock(bike)
       expect { dockingstation.release_bike }.to raise_error 'Unable to release bike'
     end 
