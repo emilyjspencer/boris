@@ -3,7 +3,7 @@ require 'dockingstation'
 describe DockingStation do
     
     let(:dockingstation) { DockingStation.new }
-    let(:bike) { double(:bike, working?: true) }
+    let(:bike) { instance_double("bike", working?: true) }
   
   
     
@@ -39,6 +39,9 @@ describe DockingStation do
       DockingStation::DEFAULT_CAPACITY.times { dockingstation.dock(bike) } 
       expect { dockingstation.dock(bike) }.to raise_error "Unable to dock bike. Station is at full capacity"
     end 
+
+   
+
   end  
 
   describe '#capacity' do
