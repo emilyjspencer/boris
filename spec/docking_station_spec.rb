@@ -15,9 +15,9 @@ describe DockingStation do
 
     it 'can release a bike that works' do
       dockingstation = DockingStation.new
-      bike = double('bike', {working?: 'true'})
+      bike = double('bike', {working?: true})
       dockingstation.release_bike(bike)
-      expect(bike.working?).to eq('true')
+      expect(bike.working?).to eq(true)
     end
   end 
 
