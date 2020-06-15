@@ -28,4 +28,11 @@ describe Bike do
     end 
   end 
 
+  describe '#repair_bike' do
+    it 'can be repaired' do
+      bike.repair_bike
+      expect(bike.broken).to eq false
+    end 
+  end 
+
 end 
