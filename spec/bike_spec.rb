@@ -8,7 +8,7 @@ describe Bike do
 
     it { is_expected.to respond_to :working? }
 
-    it "works" do
+    it 'works' do
       expect(bike.working?).to eq(true)
     end
 
@@ -20,6 +20,12 @@ describe Bike do
       expect(bike.broken).to eq true
     end 
   end 
-      
+
+  describe '#break' do
+    it 'can break' do
+      bike.break
+      expect(bike.broken).to eq true
+    end 
+  end 
 
 end 

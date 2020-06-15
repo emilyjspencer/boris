@@ -15,4 +15,12 @@ class Bike
     @broken = true 
   end 
 
+  def repair_bike
+    @broken = false
+  end
+
+  def break
+    @broken = true 
+  end 
+
 end 
