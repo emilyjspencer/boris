@@ -1,6 +1,23 @@
+require_relative 'bike'
+
 class Garage
 
-  def repair(bike)
-    true
+  attr_reader :repairs
+
+ def initialize
+  @repairs = []
+ end
+
+ def add_to_repairs_queue(bike)
+  @repairs.push(bike)
+ end
+
+  def repair
+    @repairs[-1].repair_bike
   end
-end
+
+  def add_to_repaired_bikes
+    @repairs.pop
+  end
+
+end 
