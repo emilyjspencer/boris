@@ -39,10 +39,15 @@ describe DockingStation do
       DockingStation::DEFAULT_CAPACITY.times { dockingstation.dock(bike) } 
       expect { dockingstation.dock(bike) }.to raise_error "Unable to dock bike. Station is at full capacity"
     end 
-
-   
-
   end  
+
+
+  describe '#dock_repaired_bike' do
+    it 'can dock a bike that has been repaired' do
+      dockingstation.dock_repaired_bike(bike)
+      expect(dockingstation.bikes.length).to eq 1
+    end 
+  end 
 
   describe '#capacity' do
     it 'has a default capacity' do

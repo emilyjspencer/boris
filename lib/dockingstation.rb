@@ -29,6 +29,10 @@ class DockingStation
     end 
   end 
 
+  def dock_repaired_bike(bike)
+    @bikes.push(@van.deliver_working_bike_to_docking_station(bike))
+  end
+
   private
 
   def full?
