@@ -10,6 +10,8 @@ class Van
       @bikes.push(bike)
     end
 
-    
+    def deliver(bike)
+      @bikes.pop
+    end
 
 end
