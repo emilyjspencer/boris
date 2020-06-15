@@ -22,7 +22,7 @@ class DockingStation
   def release_bike
     fail "No bikes available" if empty?
     fail "Unable to release bike" if broken?
-    @broken ? @van.collect(@bikes.pop) : @bikes.pop
+    @broken ? @van.collect_from_docking_station(@bikes.pop) : @bikes.pop
   end 
 
   private
