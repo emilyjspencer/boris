@@ -6,8 +6,10 @@ class Van
       @bikes = []
     end
   
-    def collect_bike(bike)
+    def collect(bike)
       @bikes.push(bike)
     end
+
+    
 
 end
