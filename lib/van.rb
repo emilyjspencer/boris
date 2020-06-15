@@ -1,4 +1,5 @@
 require_relative 'garage'
+require_relative 'bike'
 
 class Van
 
@@ -14,8 +15,11 @@ class Van
     end
 
     def deliver_to_garage(bike)
-      #@bikes_in_van.pop
       @garage.add_to_repairs_queue(@bikes_in_van.pop)
     end
+
+    def collect_working_bike_from_garage(bike)
+      @bikes_in_van.push(bike)
+    end 
 
 end
